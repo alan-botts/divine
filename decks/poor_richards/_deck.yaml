@@ -1,0 +1,7 @@
+name: "Poor Richard's Almanac"
+description: "55 proverbs and sayings from Benjamin Franklin's Poor Richard's Almanac (1732-1758)"
+author: "Benjamin Franklin"
+source: "https://en.wikipedia.org/wiki/Poor_Richard%27s_Almanack"
+license_type: "Public Domain"
+card_count: 55
+tags: ["proverbs", "benjamin franklin", "wisdom", "american history", "almanac", "practical advice"]

@@ -11,7 +11,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-// IndexMeta represents a deck's index.yaml metadata.
+// IndexMeta represents a deck's _deck.yaml metadata.
 type IndexMeta struct {
 	Name        string   `yaml:"name"`
 	Description string   `yaml:"description"`
@@ -28,6 +28,11 @@ type Card struct {
 	Number   int      `yaml:"number"`
 	Keywords []string `yaml:"keywords"`
 	AssetURL string   `yaml:"asset_url"`
+	Rank     string   `yaml:"rank"`
+	Suit     string   `yaml:"suit"`
+	Planet   string   `yaml:"planet"`
+	Element  string   `yaml:"element"`
+	Sign     []string `yaml:"sign"`
 	Body     string   `yaml:"-"`
 	Filename string   `yaml:"-"`
 }
@@ -68,14 +73,14 @@ func LoadDeck(dir string) (Deck, error) {
 		Path:    dir,
 	}
 
-	// Parse index.yaml
-	indexPath := filepath.Join(dir, "index.yaml")
+	// Parse _deck.yaml
+	indexPath := filepath.Join(dir, "_deck.yaml")
 	indexData, err := os.ReadFile(indexPath)
 	if err != nil {
-		return d, fmt.Errorf("reading index.yaml: %w", err)
+		return d, fmt.Errorf("reading _deck.yaml: %w", err)
 	}
 	if err := yaml.Unmarshal(indexData, &d.Meta); err != nil {
-		return d, fmt.Errorf("parsing index.yaml: %w", err)
+		return d, fmt.Errorf("parsing _deck.yaml: %w", err)
 	}
 
 	// Find and parse card files
@@ -85,7 +90,7 @@ func LoadDeck(dir string) (Deck, error) {
 	}
 
 	for _, entry := range entries {
-		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".md") {
+		if entry.IsDir() || !isCardFile(entry.Name()) {
 			continue
 		}
 		card, err := ParseCard(filepath.Join(dir, entry.Name()))
@@ -96,6 +101,10 @@ func LoadDeck(dir string) (Deck, error) {
 	}
 
 	return d, nil
+}
+
+func isCardFile(name string) bool {
+	return strings.HasSuffix(name, ".md") || strings.HasSuffix(name, ".mdx")
 }
 
 // ParseCard parses a card markdown file with YAML frontmatter.
@@ -137,15 +146,15 @@ func (d *Deck) Validate() []string {
 	var errs []string
 
 	if d.Meta.Name == "" {
-		errs = append(errs, "index.yaml: missing name")
+		errs = append(errs, "_deck.yaml: missing name")
 	}
 	if d.Meta.CardCount > 0 && len(d.Cards) != d.Meta.CardCount {
-		errs = append(errs, fmt.Sprintf("card_count mismatch: index.yaml says %d, found %d card files", d.Meta.CardCount, len(d.Cards)))
+		errs = append(errs, fmt.Sprintf("card_count mismatch: _deck.yaml says %d, found %d card files", d.Meta.CardCount, len(d.Cards)))
 	}
 
-	// Check LICENSE exists
-	if _, err := os.Stat(filepath.Join(d.Path, "LICENSE")); os.IsNotExist(err) {
-		errs = append(errs, "missing LICENSE file")
+	// Check _LICENSE exists
+	if _, err := os.Stat(filepath.Join(d.Path, "_LICENSE")); os.IsNotExist(err) {
+		errs = append(errs, "missing _LICENSE file")
 	}
 
 	for _, c := range d.Cards {

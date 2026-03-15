@@ -53,7 +53,7 @@ divine tools validate-decks
 
 Create a new directory under `decks/` with:
 
-1. **`index.yaml`** — deck metadata:
+1. **`_deck.yaml`** — deck metadata:
    ```yaml
    name: "My Deck"
    description: "A description of the deck"
@@ -64,7 +64,7 @@ Create a new directory under `decks/` with:
    tags: ["custom"]
    ```
 
-2. **`LICENSE`** — full license text for the card content.
+2. **`_LICENSE`** — full license text for the card content.
 
 3. **Card files** (`*.md`) — markdown files with YAML frontmatter:
    ```markdown
@@ -87,11 +87,11 @@ This project is licensed under **Creative Commons Attribution 4.0 International 
 ### Deck Licensing
 
 The repository as a whole is CC BY 4.0, but individual decks may carry their own licenses
-appropriate to their content. Each deck has a `LICENSE` file in its directory and a
-`license_type` field in its `index.yaml`. Specifically:
+appropriate to their content. Each deck has a `_LICENSE` file in its directory and a
+`license_type` field in its `_deck.yaml`. Specifically:
 
 - **Original content** (creative_prompts, alan_koans): CC BY 4.0
 - **Public domain works** (rider_waite_tarot, i_ching): Public Domain, with attribution to original authors
 - **Uncopyrightable facts** (magic_8_ball): Public Domain
 
-See each deck's `LICENSE` file for full details and attribution.
+See each deck's `_LICENSE` file for full details and attribution.

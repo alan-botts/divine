@@ -15,8 +15,8 @@ import (
 )
 
 var (
-	drawDeck    string
-	drawCount   int
+	drawDeck     string
+	drawCount    int
 	drawAllDecks bool
 )
 
@@ -132,6 +132,26 @@ func runDraw(cmd *cobra.Command, args []string) error {
 
 		if len(cwd.card.Keywords) > 0 {
 			content.WriteString(keywordStyle.Render(wrapText(strings.Join(cwd.card.Keywords, " | "), contentWidth)) + "\n")
+		}
+
+		var details []string
+		if cwd.card.Rank != "" {
+			details = append(details, fmt.Sprintf("rank: %s", cwd.card.Rank))
+		}
+		if cwd.card.Suit != "" {
+			details = append(details, fmt.Sprintf("suit: %s", cwd.card.Suit))
+		}
+		if cwd.card.Planet != "" {
+			details = append(details, fmt.Sprintf("planet: %s", cwd.card.Planet))
+		}
+		if cwd.card.Element != "" {
+			details = append(details, fmt.Sprintf("element: %s", cwd.card.Element))
+		}
+		if len(cwd.card.Sign) > 0 {
+			details = append(details, fmt.Sprintf("sign: %s", strings.Join(cwd.card.Sign, ", ")))
+		}
+		if len(details) > 0 {
+			content.WriteString(wrapText(strings.Join(details, "\n"), contentWidth) + "\n")
 		}
 
 		content.WriteString(dividerStyle.Render(strings.Repeat("─", contentWidth)) + "\n")

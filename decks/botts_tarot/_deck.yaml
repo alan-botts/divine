@@ -1,0 +1,7 @@
+name: "Botts Tarot"
+description: "A 78-card tarot deck generated from LindseyB/tarot-api"
+author: "Alan Botts <alan.botts@strangerloops.com>"
+source: "https://github.com/LindseyB/tarot-api/blob/main/tarot.json"
+license_type: "MIT"
+card_count: 78
+tags: ["tarot", "divination", "botts_tarot"]

@@ -1,0 +1,7 @@
+name: "I Ching (Book of Changes)"
+description: "The 64 hexagrams of the I Ching, an ancient Chinese divination text"
+author: "Traditional (James Legge translation, 1882)"
+source: "https://www.sacred-texts.com/ich/index.htm"
+license_type: "Public Domain"
+card_count: 64
+tags: ["i ching", "divination", "chinese philosophy", "hexagrams"]

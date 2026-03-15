@@ -1,0 +1,7 @@
+name: "Magic 8 Ball"
+description: "The 20 standard Magic 8 Ball responses, grouped by sentiment"
+author: "Traditional (Mattel)"
+source: "https://en.wikipedia.org/wiki/Magic_8-Ball"
+license_type: "Public Domain (uncopyrightable facts)"
+card_count: 20
+tags: ["magic 8 ball", "fortune", "yes/no", "quick answer"]

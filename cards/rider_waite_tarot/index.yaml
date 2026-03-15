@@ -1,0 +1,7 @@
+name: "Rider-Waite-Smith Tarot (Major Arcana)"
+description: "The 22 Major Arcana cards from the classic Rider-Waite-Smith tarot deck"
+author: "A.E. Waite & Pamela Colman Smith"
+source: "https://commons.wikimedia.org/wiki/Category:Rider-Waite_tarot_deck"
+license_type: "Public Domain"
+card_count: 22
+tags: ["tarot", "divination", "major arcana"]

@@ -1,0 +1,7 @@
+name: "The Prince"
+description: "42 key principles of statecraft and strategy from Machiavelli's The Prince, paraphrased from the W.K. Marriott translation"
+author: "Niccolò Machiavelli (W.K. Marriott translation)"
+source: "https://en.wikipedia.org/wiki/The_Prince"
+license_type: "Public Domain"
+card_count: 42
+tags: ["strategy", "politics", "power", "machiavelli", "philosophy", "leadership"]

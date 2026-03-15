@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"embed"
 	"fmt"
 	"os"
 	"strings"
@@ -9,11 +8,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
-//go:embed ../VERSION
-var versionFile string
-
 var (
-	version   = strings.TrimSpace(versionFile)
+	version   = "0.0.2"
 	commit    = "unknown"
 	buildDate = "unknown"
 )
@@ -33,6 +29,24 @@ func Execute() {
 }
 
 func init() {
+	if storedVersion := defaultVersionFromFile(); storedVersion != "" {
+		version = storedVersion
+	}
+
 	rootCmd.SetVersionTemplate("divine {{.Version}}\n")
 	rootCmd.AddCommand(versionCmd)
+}
+
+func defaultVersionFromFile() string {
+	versionPath, err := findVersionFile()
+	if err != nil {
+		return ""
+	}
+
+	value, err := os.ReadFile(versionPath)
+	if err != nil {
+		return ""
+	}
+
+	return strings.TrimSpace(string(value))
 }

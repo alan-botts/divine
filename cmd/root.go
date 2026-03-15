@@ -28,6 +28,6 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.SetVersionTemplate("{{printf \"divine %s\n\" .Version}}")
+	rootCmd.SetVersionTemplate("divine {{.Version}}\n")
 	rootCmd.AddCommand(versionCmd)
 }

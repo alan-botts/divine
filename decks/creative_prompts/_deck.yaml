@@ -1,6 +1,6 @@
 name: "Creative Prompts"
 description: "Practical thinking tools and creative provocations for decision-making and brainstorming"
-author: "Alan Botts"
+author: "Alan Botts <alan.botts@strangerloops.com>"
 source: "https://github.com/alan-botts/divine"
 license_type: "CC BY 4.0"
 card_count: 25

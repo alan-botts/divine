@@ -40,11 +40,11 @@ type Deck struct {
 	Path    string
 }
 
-// LoadAll discovers and loads all decks from the given cards directory.
-func LoadAll(cardsDir string) ([]Deck, error) {
-	entries, err := os.ReadDir(cardsDir)
+// LoadAll discovers and loads all decks from the given decks directory.
+func LoadAll(decksDir string) ([]Deck, error) {
+	entries, err := os.ReadDir(decksDir)
 	if err != nil {
-		return nil, fmt.Errorf("reading cards directory: %w", err)
+		return nil, fmt.Errorf("reading decks directory: %w", err)
 	}
 
 	var decks []Deck
@@ -52,7 +52,7 @@ func LoadAll(cardsDir string) ([]Deck, error) {
 		if !entry.IsDir() {
 			continue
 		}
-		d, err := LoadDeck(filepath.Join(cardsDir, entry.Name()))
+		d, err := LoadDeck(filepath.Join(decksDir, entry.Name()))
 		if err != nil {
 			return nil, fmt.Errorf("loading deck %s: %w", entry.Name(), err)
 		}
@@ -175,12 +175,12 @@ func (d *Deck) DrawRandom(n int) []Card {
 	return result
 }
 
-// FindCardsDir locates the cards/ directory relative to the executable or CWD.
-func FindCardsDir() (string, error) {
+// FindDecksDir locates the decks/ directory relative to the executable or CWD.
+func FindDecksDir() (string, error) {
 	// Try relative to executable
 	exe, err := os.Executable()
 	if err == nil {
-		dir := filepath.Join(filepath.Dir(exe), "cards")
+		dir := filepath.Join(filepath.Dir(exe), "decks")
 		if info, err := os.Stat(dir); err == nil && info.IsDir() {
 			return dir, nil
 		}
@@ -189,13 +189,13 @@ func FindCardsDir() (string, error) {
 	// Try CWD
 	cwd, err := os.Getwd()
 	if err == nil {
-		dir := filepath.Join(cwd, "cards")
+		dir := filepath.Join(cwd, "decks")
 		if info, err := os.Stat(dir); err == nil && info.IsDir() {
 			return dir, nil
 		}
 	}
 
-	return "", fmt.Errorf("could not find cards/ directory")
+	return "", fmt.Errorf("could not find decks/ directory")
 }
 
 // RenderCard formats a card for terminal display.

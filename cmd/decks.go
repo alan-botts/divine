@@ -19,12 +19,12 @@ func init() {
 }
 
 func runDecks(cmd *cobra.Command, args []string) error {
-	cardsDir, err := deck.FindCardsDir()
+	decksDir, err := deck.FindDecksDir()
 	if err != nil {
 		return err
 	}
 
-	decks, err := deck.LoadAll(cardsDir)
+	decks, err := deck.LoadAll(decksDir)
 	if err != nil {
 		return err
 	}

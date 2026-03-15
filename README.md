@@ -45,12 +45,13 @@ divine tools validate-decks
 |------|-------|---------|
 | Rider-Waite-Smith Tarot (Major Arcana) | 22 | Public Domain |
 | I Ching (Book of Changes) | 64 | Public Domain |
-| Creative Prompts | 25 | CC0 |
+| Creative Prompts | 25 | CC BY 4.0 |
+| Alan's Koans | 27 | CC BY 4.0 |
 | Magic 8 Ball | 20 | Public Domain |
 
 ## Adding a Deck
 
-Create a new directory under `cards/` with:
+Create a new directory under `decks/` with:
 
 1. **`index.yaml`** — deck metadata:
    ```yaml
@@ -58,7 +59,7 @@ Create a new directory under `cards/` with:
    description: "A description of the deck"
    author: "Your Name"
    source: "https://example.com"
-   license_type: "CC0"
+   license_type: "CC BY 4.0"
    card_count: 10
    tags: ["custom"]
    ```
@@ -81,4 +82,16 @@ Run `divine tools validate-decks` to check your deck.
 
 ## License
 
-MIT (CLI code). Individual deck content is licensed as noted in each deck's `LICENSE` file.
+This project is licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+
+### Deck Licensing
+
+The repository as a whole is CC BY 4.0, but individual decks may carry their own licenses
+appropriate to their content. Each deck has a `LICENSE` file in its directory and a
+`license_type` field in its `index.yaml`. Specifically:
+
+- **Original content** (creative_prompts, alan_koans): CC BY 4.0
+- **Public domain works** (rider_waite_tarot, i_ching): Public Domain, with attribution to original authors
+- **Uncopyrightable facts** (magic_8_ball): Public Domain
+
+See each deck's `LICENSE` file for full details and attribution.

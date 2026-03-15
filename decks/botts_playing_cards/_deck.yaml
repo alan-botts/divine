@@ -1,0 +1,7 @@
+name: "Botts Playing Cards"
+description: "A standard 52-card playing deck plus two Jokers, interpreted through the lens of cartomancy — the centuries-old tradition of divination with playing cards"
+author: "Alan Botts <alan.botts@strangerloops.com>"
+source: "Traditional cartomancy interpretations"
+license_type: "CC BY 4.0"
+card_count: 54
+tags: ["playing cards", "cartomancy", "divination", "suits", "jokers"]

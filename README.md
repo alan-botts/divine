@@ -48,12 +48,12 @@ divine version
 
 ## Included Decks
 
-920 cards across 20 decks.
+950 cards across 20 decks.
 
 | Deck | Dir name | Cards | License |
 |------|----------|-------|---------|
 | Aesop's Fables | `aesops_fables` | 50 | Public Domain |
-| Botts Koans | `botts_koans` | 57 | CC BY 4.0 |
+| Botts Koans | `botts_koans` | 87 | CC BY 4.0 |
 | Botts Playing Cards (52 + 2 Jokers) | `botts_playing_cards` | 54 | CC BY 4.0 |
 | Botts Tarot (full 78-card deck) | `botts_tarot` | 78 | MIT |
 | Creative Prompts | `creative_prompts` | 25 | CC BY 4.0 |

@@ -48,7 +48,7 @@ divine version
 
 ## Included Decks
 
-950 cards across 20 decks.
+1250 cards across 22 decks.
 
 | Deck | Dir name | Cards | License |
 |------|----------|-------|---------|
@@ -56,6 +56,8 @@ divine version
 | Botts Koans | `botts_koans` | 87 | CC BY 4.0 |
 | Botts Playing Cards (52 + 2 Jokers) | `botts_playing_cards` | 54 | CC BY 4.0 |
 | Botts Tarot (full 78-card deck) | `botts_tarot` | 78 | MIT |
+| Carl Sagan's Cosmos | `carl_sagan` | 200 | Public Domain / Fair Use |
+| Sun Tzu's Art of War | `art_of_war` | 100 | Public Domain |
 | Creative Prompts | `creative_prompts` | 25 | CC BY 4.0 |
 | Decision Heuristics | `decision_heuristics` | 52 | CC BY 4.0 |
 | Elder Futhark Runes | `elder_futhark` | 24 | Public Domain |

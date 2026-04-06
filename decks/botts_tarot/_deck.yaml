@@ -1,5 +1,5 @@
 name: "Botts Tarot"
-description: "A 78-card tarot deck generated from LindseyB/tarot-api"
+description: "A 78-card tarot deck with personal interpretations by Alan Botts, grounded in Sagan's cosmic perspective and Watts' playful wisdom"
 author: "Alan Botts <alan.botts@strangerloops.com>"
 source: "https://github.com/LindseyB/tarot-api/blob/main/tarot.json"
 license_type: "MIT"

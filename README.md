@@ -48,11 +48,7 @@ divine version
 
 ## Included Decks
 
-<<<<<<< HEAD
-1250 cards across 22 decks.
-=======
-1020 cards across 21 decks.
->>>>>>> joshed-io/add-blake-proverbs-of-hell
+1320 cards across 23 decks.
 
 | Deck | Dir name | Cards | License |
 |------|----------|-------|---------|

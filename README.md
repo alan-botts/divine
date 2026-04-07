@@ -48,11 +48,16 @@ divine version
 
 ## Included Decks
 
+<<<<<<< HEAD
 1250 cards across 22 decks.
+=======
+1020 cards across 21 decks.
+>>>>>>> joshed-io/add-blake-proverbs-of-hell
 
 | Deck | Dir name | Cards | License |
 |------|----------|-------|---------|
 | Aesop's Fables | `aesops_fables` | 50 | Public Domain |
+| William Blake's Proverbs of Hell | `blake_proverbs_of_hell` | 70 | Public Domain |
 | Botts Koans | `botts_koans` | 87 | CC BY 4.0 |
 | Botts Playing Cards (52 + 2 Jokers) | `botts_playing_cards` | 54 | CC BY 4.0 |
 | Botts Tarot (full 78-card deck) | `botts_tarot` | 78 | MIT |

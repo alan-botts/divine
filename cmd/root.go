@@ -15,9 +15,9 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "divine",
-	Short: "A general-purpose divination CLI",
-	Long:  "Draw cards from tarot, I Ching, creative prompts, and more.",
+	Use:     "divine",
+	Short:   "A general-purpose divination CLI",
+	Long:    "Draw cards from tarot, I Ching, creative prompts, and more.",
 	Version: "0.1.001",
 }
 

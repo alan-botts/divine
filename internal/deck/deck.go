@@ -26,22 +26,22 @@ type IndexMeta struct {
 
 // Card represents a single card parsed from a markdown file.
 type Card struct {
-	Title    string   `yaml:"title"`
-	Number   int      `yaml:"number"`
-	Keywords []string `yaml:"keywords"`
-	AssetURL string   `yaml:"asset_url"`
+	Title    string                 `yaml:"title"`
+	Number   int                    `yaml:"number"`
+	Keywords []string               `yaml:"keywords"`
+	AssetURL string                 `yaml:"asset_url"`
 	Fields   map[string]interface{} `yaml:",inline"`
-	Body     string   `yaml:"-"`
-	Filename string   `yaml:"-"`
+	Body     string                 `yaml:"-"`
+	Filename string                 `yaml:"-"`
 }
 
 // Deck is a loaded deck with metadata and cards.
 type Deck struct {
-	DirName     string
-	Meta        IndexMeta
-	Cards       []Card
-	Path        string
-	HasLicense  bool
+	DirName    string
+	Meta       IndexMeta
+	Cards      []Card
+	Path       string
+	HasLicense bool
 }
 
 // LoadAll discovers and loads all embedded decks bundled in the binary.
